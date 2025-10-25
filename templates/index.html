@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Compare Suburbs | School Insights</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Compare Suburbs - School Insights</h1>
+
+    <div class="inputs">
+      <input type="text" id="suburb1" placeholder="Enter first suburb">
+      <input type="text" id="suburb2" placeholder="Enter second suburb">
+      <button onclick="compareSuburbs()">Compare</button>
+    </div>
+
+    <div id="results" style="display:none;">
+      <h2 id="comparison-title"></h2>
+      <canvas id="comparisonChart" width="600" height="300"></canvas>
+
+      <div id="summary">
+        <p><b id="s1"></b>: Avg NAPLAN <span id="s1-naplan"></span>, Attendance <span id="s1-att"></span>%</p>
+        <p><b id="s2"></b>: Avg NAPLAN <span id="s2-naplan"></span>, Attendance <span id="s2-att"></span>%</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
